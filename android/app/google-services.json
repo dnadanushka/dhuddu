@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "265211233315",
+    "firebase_url": "https://dhuddu-67bc4.firebaseio.com",
+    "project_id": "dhuddu-67bc4",
+    "storage_bucket": "dhuddu-67bc4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265211233315:android:8f6c72262cb59769575d96",
+        "android_client_info": {
+          "package_name": "com.example.dhuddu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265211233315-h8j91bdq8pjmm1ule790te39rgivpkdi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dhuddu",
+            "certificate_hash": "4ecb9b3e2554815f9efc1daa1dffa624bb445be2"
+          }
+        },
+        {
+          "client_id": "265211233315-aimio3ng08cj4s17qbllljn8ib1507qm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3PfUXumGN--UkCG_u-oPjVWUJng_s_-w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "265211233315-aimio3ng08cj4s17qbllljn8ib1507qm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

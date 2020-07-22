@@ -1,19 +1,18 @@
-import 'package:dhuddu/services/auth.dart';
 import 'package:dhuddu/util/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as JSON;
 
-class Start extends StatefulWidget {
+class StartTemp extends StatefulWidget {
   @override
-  _StartState createState() => _StartState();
+  _StartTempState createState() => _StartTempState();
 }
 
-class _StartState extends State<Start> {
+class _StartTempState extends State<StartTemp> {
   bool _isLoggedIn = false;
   Map userProfile;
-  String email = '';
+  var uri = 'https://dhuddu-67bc4.firebaseapp.com/__/auth/handler';
 
   final facebookLogin = FacebookLogin();
 
@@ -92,12 +91,7 @@ class _StartState extends State<Start> {
               FloatingActionButton(
                 backgroundColor: Colors.white,
                 onPressed: () {
-                  AuthService().fbLogin().then((value) {
-                    setState(() {
-                      _isLoggedIn = true;
-                      email = value.email;
-                    });
-                  });
+                  _loginWithFB();
                 },
                 child: Image.asset(
                   'assets/facebook.png',
@@ -105,14 +99,7 @@ class _StartState extends State<Start> {
               ),
               FloatingActionButton(
                 backgroundColor: Colors.white,
-                onPressed: () {
-                  AuthService().handleSignIn().then((value) {
-                    setState(() {
-                      _isLoggedIn = true;
-                      email = value.email;
-                    });
-                  });
-                },
+                onPressed: null,
                 child: Image.asset(
                   'assets/google.png',
                   fit: BoxFit.fitHeight,
@@ -120,9 +107,7 @@ class _StartState extends State<Start> {
               ),
               FloatingActionButton(
                 backgroundColor: Colors.white,
-                onPressed: () {
-                  AuthService().logout();
-                },
+                onPressed: null,
                 child: Image.asset(
                   'assets/instagram.png',
                 ),
@@ -134,12 +119,12 @@ class _StartState extends State<Start> {
             ? Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  // Image.network(
-                  //   userProfile["picture"]["data"]["url"],
-                  //   height: 50.0,
-                  //   width: 50.0,
-                  // ),
-                  Text(email),
+                  Image.network(
+                    userProfile["picture"]["data"]["url"],
+                    height: 50.0,
+                    width: 50.0,
+                  ),
+                  Text(userProfile["name"]),
                   OutlineButton(
                     onPressed: () {
                       _logout();
