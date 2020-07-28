@@ -1,9 +1,7 @@
 import 'package:dhuddu/services/auth.dart';
 import 'package:dhuddu/util/size_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_facebook_login/flutter_facebook_login.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert' as JSON;
+
 
 class Start extends StatefulWidget {
   @override
@@ -14,40 +12,6 @@ class _StartState extends State<Start> {
   bool _isLoggedIn = false;
   Map userProfile;
   String email = '';
-
-  final facebookLogin = FacebookLogin();
-
-  _loginWithFB() async {
-    final result = await facebookLogin.logIn(['email']);
-
-    switch (result.status) {
-      case FacebookLoginStatus.loggedIn:
-        final token = result.accessToken.token;
-        final graphResponse = await http.get(
-            'https://graph.facebook.com/v2.12/me?fields=name,picture,email&access_token=${token}');
-        final profile = JSON.jsonDecode(graphResponse.body);
-        print(profile);
-        setState(() {
-          userProfile = profile;
-          _isLoggedIn = true;
-        });
-        break;
-
-      case FacebookLoginStatus.cancelledByUser:
-        setState(() => _isLoggedIn = false);
-        break;
-      case FacebookLoginStatus.error:
-        setState(() => _isLoggedIn = false);
-        break;
-    }
-  }
-
-  _logout() {
-    facebookLogin.logOut();
-    setState(() {
-      _isLoggedIn = false;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -120,9 +84,7 @@ class _StartState extends State<Start> {
               ),
               FloatingActionButton(
                 backgroundColor: Colors.white,
-                onPressed: () {
-                  AuthService().logout();
-                },
+                onPressed: null,
                 child: Image.asset(
                   'assets/instagram.png',
                 ),
@@ -134,21 +96,17 @@ class _StartState extends State<Start> {
             ? Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  // Image.network(
-                  //   userProfile["picture"]["data"]["url"],
-                  //   height: 50.0,
-                  //   width: 50.0,
-                  // ),
                   Text(email),
                   OutlineButton(
                     onPressed: () {
-                      _logout();
+                      AuthService().logout();
                     },
                     child: Text('Logout'),
                   )
                 ],
               )
             : Container(),
+     
       ],
     ));
   }
