@@ -60,4 +60,6 @@ class AuthService {
     await facebookLogin.logOut();
     await _googleSignIn.signOut();
   }
+
+  
 }
