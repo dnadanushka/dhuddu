@@ -1,3 +1,4 @@
+import 'package:dhuddu/screens/spalsh.dart';
 import 'package:dhuddu/screens/start.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Start(),
+      home: SplashScreen(),
     );
   }
 }

@@ -54,6 +54,7 @@ class _StartState extends State<Start> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               FloatingActionButton(
+                heroTag: "btn1",
                 backgroundColor: Colors.white,
                 onPressed: () {
                   AuthService().fbLogin().then((value) {
@@ -68,6 +69,7 @@ class _StartState extends State<Start> {
                 ),
               ),
               FloatingActionButton(
+                heroTag: "btn2",
                 backgroundColor: Colors.white,
                 onPressed: () {
                   AuthService().handleSignIn().then((value) {
@@ -83,6 +85,7 @@ class _StartState extends State<Start> {
                 ),
               ),
               FloatingActionButton(
+                heroTag: "btn3",
                 backgroundColor: Colors.white,
                 onPressed: null,
                 child: Image.asset(
