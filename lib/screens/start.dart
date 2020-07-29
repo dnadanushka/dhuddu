@@ -171,6 +171,95 @@ class _StartState extends State<Start> {
     ),
     ),
 
+        SizedBox(
+          height: SizeConfig.blockSizeVertical * 10,
+        ),
+        SizedBox(
+          height: SizeConfig.blockSizeVertical * 15,
+          child: Image.asset(
+            'assets/logo.png',
+          ),
+        ),
+        SizedBox(
+          height: SizeConfig.blockSizeVertical * 8,
+        ),
+        Text(
+          'Signup Here',
+          style: TextStyle(
+              fontSize: SizeConfig.blockSizeHorizontal * 8,
+              fontWeight: FontWeight.bold),
+        ),
+        Text(
+          'Start yout journey by adding details',
+          style: TextStyle(
+            fontSize: SizeConfig.blockSizeHorizontal * 4,
+          ),
+        ),
+        SizedBox(
+          height: SizeConfig.blockSizeVertical * 5,
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              FloatingActionButton(
+                heroTag: "btn1",
+                backgroundColor: Colors.white,
+                onPressed: () {
+                  AuthService().fbLogin().then((value) {
+                    setState(() {
+                      _isLoggedIn = true;
+                      email = value.email;
+                    });
+                  });
+                },
+                child: Image.asset(
+                  'assets/facebook.png',
+                ),
+              ),
+              FloatingActionButton(
+                heroTag: "btn2",
+                backgroundColor: Colors.white,
+                onPressed: () {
+                  AuthService().handleSignIn().then((value) {
+                    setState(() {
+                      _isLoggedIn = true;
+                      email = value.email;
+                    });
+                  });
+                },
+                child: Image.asset(
+                  'assets/google.png',
+                  fit: BoxFit.fitHeight,
+                ),
+              ),
+              FloatingActionButton(
+                heroTag: "btn3",
+                backgroundColor: Colors.white,
+                onPressed: null,
+                child: Image.asset(
+                  'assets/instagram.png',
+                ),
+              )
+            ],
+          ),
+        ),
+        _isLoggedIn
+            ? Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Text(email),
+                  OutlineButton(
+                    onPressed: () {
+                      AuthService().logout();
+                    },
+                    child: Text('Logout'),
+                  )
+                ],
+              )
+            : Container(),
+
       ],
     ),
         ));
