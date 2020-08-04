@@ -1,267 +1,261 @@
+import 'package:dhuddu/screens/dashboard.dart';
 import 'package:dhuddu/services/auth.dart';
+import 'package:dhuddu/util/constants.dart';
 import 'package:dhuddu/util/size_config.dart';
 import 'package:flutter/material.dart';
 
-
-class Start extends StatefulWidget {
+class StartScreen extends StatefulWidget {
+  static const routeName = '/start_screen';
   @override
-  _StartState createState() => _StartState();
+  _StartScreenState createState() => _StartScreenState();
 }
 
-class _StartState extends State<Start> {
+class _StartScreenState extends State<StartScreen> {
   bool _isLoggedIn = false;
+  bool isLogin = true;
   Map userProfile;
   String email = '';
+
+  TextEditingController _emailController;
+  TextEditingController _passwordController;
+  TextEditingController _usernameController;
+  String _email;
+  String _password;
+  String _username;
+
+  @override
+  void initState() {
+    super.initState();
+    _emailController = TextEditingController();
+    _passwordController = TextEditingController();
+    _usernameController = TextEditingController();
+  }
+
+  Future<void> authenticate() async {
+    if (isLogin) {
+      try {
+        await AuthService()
+            .login(_emailController.text, _passwordController.text);
+        Navigator.pushReplacementNamed(context, Dashbard.routeName);
+      } catch (e) {
+        print('error');
+        Scaffold.of(context).showSnackBar(SnackBar(
+      content: Text("Error occured"),
+    ));
+      }
+    } else {
+      try {
+        await AuthService().signup(_usernameController.text,
+            _emailController.text, _passwordController.text);
+        Navigator.pushReplacementNamed(context, Dashbard.routeName);
+      } catch (e) {
+        print('error');
+        Scaffold.of(context).showSnackBar(SnackBar(
+      content: Text("Error occured"),
+    ));
+      }
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-        body: SingleChildScrollView(
-          child: Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-          SizedBox(
-            height: SizeConfig.blockSizeVertical * 10,
-          ),
-          SizedBox(
-            height: SizeConfig.blockSizeVertical * 15,
-            child: Image.asset(
-              'assets/logo.png',
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            SizedBox(
+              height: SizeConfig.blockSizeVertical * 10,
             ),
-          ),
-          SizedBox(
-            height: SizeConfig.blockSizeVertical * 8,
-          ),
-          Text(
-            'Signup Here',
-            style: TextStyle(
-                fontSize: SizeConfig.blockSizeHorizontal * 8,
-                fontWeight: FontWeight.bold),
-          ),
-          Text(
-            'Start yout journey by adding details',
-            style: TextStyle(
-              fontSize: SizeConfig.blockSizeHorizontal * 4,
+            SizedBox(
+              height: SizeConfig.blockSizeVertical * 15,
+              child: Image.asset(
+                'assets/logo.png',
+              ),
             ),
-          ),
-          SizedBox(
-            height: SizeConfig.blockSizeVertical * 5,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            SizedBox(
+              height: SizeConfig.blockSizeVertical * 8,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                FloatingActionButton(
-                  backgroundColor: Colors.white,
+                FlatButton(
                   onPressed: () {
-                    AuthService().fbLogin().then((value) {
-                      setState(() {
-                        _isLoggedIn = true;
-                        email = value.email;
-                      });
+                    setState(() {
+                      isLogin = true;
                     });
                   },
-                  child: Image.asset(
-                    'assets/facebook.png',
+                  child: Text(
+                    'LOGIN',
+                    style: TextStyle(
+                      fontSize: SizeConfig.blockSizeHorizontal * 7,
+                      fontWeight: FontWeight.bold,
+                      color: isLogin ? Colors.black : Constants.lightGray,
+                    ),
                   ),
                 ),
-                FloatingActionButton(
-                  backgroundColor: Colors.white,
+                FlatButton(
                   onPressed: () {
-                    AuthService().handleSignIn().then((value) {
-                      setState(() {
-                        _isLoggedIn = true;
-                        email = value.email;
-                      });
+                    setState(() {
+                      isLogin = false;
                     });
                   },
-                  child: Image.asset(
-                    'assets/google.png',
-                    fit: BoxFit.fitHeight,
-                  ),
-                ),
-                FloatingActionButton(
-                  backgroundColor: Colors.white,
-                  onPressed: null,
-                  child: Image.asset(
-                    'assets/instagram.png',
+                  child: Text(
+                    'SIGNUP',
+                    style: TextStyle(
+                      fontSize: SizeConfig.blockSizeHorizontal * 7,
+                      fontWeight: FontWeight.bold,
+                      color: !isLogin ? Colors.black : Constants.lightGray,
+                    ),
                   ),
                 )
               ],
             ),
-          ),
-          _isLoggedIn
-              ? Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Text(email),
-                    OutlineButton(
-                      onPressed: () {
-                        AuthService().logout();
-                      },
-                      child: Text('Logout'),
-                    )
-                  ],
-                )
-              : Container(),
 
-          SizedBox(
-            height: SizeConfig.blockSizeVertical * 2,
-          ),
-    Padding(
-    padding: const EdgeInsets.symmetric(
-          horizontal: 20.0
-    ),
-    child: Column(
-    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-    children: <Widget>[
-      TextField(
-          obscureText: true,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            labelText: 'Username',
-          ),
-      ),
-      SizedBox(
-          height: SizeConfig.blockSizeVertical * 2,
-      ),
-      TextField(
-          obscureText: true,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            labelText: 'Email',
-          ),
-      ),
-      SizedBox(
-          height: SizeConfig.blockSizeVertical * 2,
-      ),
-      TextField(
-          obscureText: true,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            labelText: 'Create Password',
-          ),
-      ),
-      SizedBox(
-          height: SizeConfig.blockSizeVertical * 2,
-      ),
-      RaisedButton(
-          onPressed: () {},
-          textColor: Colors.white,
-          padding: const EdgeInsets.all(0.0),
-          child: Container(
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: <Color>[
-                  Color(0xFF0D47A1),
-                  Color(0xFF1976D2),
-                  Color(0xFF42A5F5),
+            Text(
+              'Start yout journey by adding details',
+              style: TextStyle(
+                fontSize: SizeConfig.blockSizeHorizontal * 4,
+              ),
+            ),
+            SizedBox(
+              height: SizeConfig.blockSizeVertical * 5,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  FloatingActionButton(
+                    heroTag: 'tag_1',
+                    backgroundColor: Colors.white,
+                    onPressed: () {
+                      AuthService().fbLogin().then((value) {
+                        setState(() {
+                          _isLoggedIn = true;
+                          email = value.email;
+                          _emailController.text = value.email;
+                          _usernameController.text = value.displayName;
+                          _passwordController.text = '';
+                        });
+                      });
+                    },
+                    child: Image.asset(
+                      'assets/facebook.png',
+                    ),
+                  ),
+                  FloatingActionButton(
+                    heroTag: 'tag_2',
+                    backgroundColor: Colors.white,
+                    onPressed: () {
+                      AuthService().handleSignIn().then((value) {
+                        setState(() {
+                          _isLoggedIn = true;
+                          email = value.email;
+                          _emailController.text = value.email;
+                          _usernameController.text = value.displayName;
+                          _passwordController.text = '';
+                        });
+                      });
+                    },
+                    child: Image.asset(
+                      'assets/google.png',
+                      fit: BoxFit.fitHeight,
+                    ),
+                  ),
+                  FloatingActionButton(
+                    heroTag: 'tag_3',
+                    backgroundColor: Colors.white,
+                    onPressed: null,
+                    child: Image.asset(
+                      'assets/instagram.png',
+                    ),
+                  )
                 ],
               ),
             ),
-            padding: const EdgeInsets.all(15.0),
-            child:
-            const Text('Create', style: TextStyle(fontSize: 20)),
-          ),
-      ),
-    ],
-    ),
-    ),
-
-        SizedBox(
-          height: SizeConfig.blockSizeVertical * 10,
-        ),
-        SizedBox(
-          height: SizeConfig.blockSizeVertical * 15,
-          child: Image.asset(
-            'assets/logo.png',
-          ),
-        ),
-        SizedBox(
-          height: SizeConfig.blockSizeVertical * 8,
-        ),
-        Text(
-          'Signup Here',
-          style: TextStyle(
-              fontSize: SizeConfig.blockSizeHorizontal * 8,
-              fontWeight: FontWeight.bold),
-        ),
-        Text(
-          'Start yout journey by adding details',
-          style: TextStyle(
-            fontSize: SizeConfig.blockSizeHorizontal * 4,
-          ),
-        ),
-        SizedBox(
-          height: SizeConfig.blockSizeVertical * 5,
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              FloatingActionButton(
-                heroTag: "btn1",
-                backgroundColor: Colors.white,
-                onPressed: () {
-                  AuthService().fbLogin().then((value) {
-                    setState(() {
-                      _isLoggedIn = true;
-                      email = value.email;
-                    });
-                  });
-                },
-                child: Image.asset(
-                  'assets/facebook.png',
-                ),
-              ),
-              FloatingActionButton(
-                heroTag: "btn2",
-                backgroundColor: Colors.white,
-                onPressed: () {
-                  AuthService().handleSignIn().then((value) {
-                    setState(() {
-                      _isLoggedIn = true;
-                      email = value.email;
-                    });
-                  });
-                },
-                child: Image.asset(
-                  'assets/google.png',
-                  fit: BoxFit.fitHeight,
-                ),
-              ),
-              FloatingActionButton(
-                heroTag: "btn3",
-                backgroundColor: Colors.white,
-                onPressed: null,
-                child: Image.asset(
-                  'assets/instagram.png',
-                ),
-              )
-            ],
-          ),
-        ),
-        _isLoggedIn
-            ? Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Text(email),
-                  OutlineButton(
-                    onPressed: () {
-                      AuthService().logout();
-                    },
-                    child: Text('Logout'),
+            // _isLoggedIn
+            //     ? Column(
+            //         mainAxisSize: MainAxisSize.min,
+            //         children: <Widget>[
+            //           Text(email),
+            //           OutlineButton(
+            //             onPressed: () {
+            //               AuthService().logout();
+            //             },
+            //             child: Text('Logout'),
+            //           )
+            //         ],
+            //       )
+            //     : Container(),
+            !isLogin
+                ? Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: TextFormField(
+                      controller: _usernameController,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: 'Username',
+                      ),
+                      onSaved: (newValue) {
+                        _username = newValue.trim();
+                      },
+                    ),
                   )
-                ],
-              )
-            : Container(),
-
-      ],
-    ),
-        ));
+                : Container(),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextFormField(
+                controller: _emailController,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Email',
+                ),
+                onSaved: (newValue) {
+                  _email = newValue.trim();
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextFormField(
+                controller: _passwordController,
+                obscureText: true,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  labelText: 'Password',
+                ),
+                onSaved: (newValue) {
+                  _password = newValue.trim();
+                },
+              ),
+            ),
+            RaisedButton(
+              onPressed: () {
+                authenticate();
+              },
+              textColor: Colors.white,
+              padding: const EdgeInsets.all(0.0),
+              child: Container(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: <Color>[
+                      Color(0xFF0D47A1),
+                      Color(0xFF1976D2),
+                      Color(0xFF42A5F5),
+                    ],
+                  ),
+                ),
+                padding: const EdgeInsets.all(15.0),
+                child: Text(isLogin ? 'Login' : 'Create',
+                    style: TextStyle(fontSize: 20)),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

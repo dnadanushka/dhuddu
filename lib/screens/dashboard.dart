@@ -3,8 +3,10 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:social_share_plugin/social_share_plugin.dart';
+import './start.dart';
 
 class Dashbard extends StatelessWidget {
+  static const routeName = '/dashboard';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,6 +47,12 @@ class Dashbard extends StatelessWidget {
             );
           },
           child: Text('Share to Instagram'),
+        ),
+             FlatButton(
+          onPressed: () {
+            Navigator.pushReplacementNamed(context, StartScreen.routeName);
+          },
+          child: Text('Logout'),
         )
         ],
       ),

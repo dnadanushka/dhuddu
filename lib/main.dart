@@ -1,3 +1,4 @@
+import 'package:dhuddu/screens/dashboard.dart';
 import 'package:dhuddu/screens/spalsh.dart';
 import 'package:dhuddu/screens/start.dart';
 import 'package:flutter/material.dart';
@@ -13,13 +14,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        
         primarySwatch: Colors.blue,
-        
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: SplashScreen(),
+      routes: {
+        Dashbard.routeName: (ctx) => Dashbard(),
+        StartScreen.routeName:(ctx) => StartScreen(),
+      },
     );
   }
 }
-

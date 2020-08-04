@@ -13,7 +13,7 @@ class SplashScreen extends StatelessWidget {
             Duration(seconds: 2),
                 () =>
             Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (BuildContext context) => Start())));
+                builder: (BuildContext context) => StartScreen())));
     SizeConfig().init(context);
     return Scaffold(
         body: Stack(
