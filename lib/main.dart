@@ -1,6 +1,10 @@
+import 'package:dhuddu/screens/advertiser/onboarding_advertiser.dart';
 import 'package:dhuddu/screens/dashboard.dart';
-import 'package:dhuddu/screens/spalsh.dart';
-import 'package:dhuddu/screens/start.dart';
+import 'package:dhuddu/screens/comman/spalsh.dart';
+import 'package:dhuddu/screens/comman/auth_screen.dart';
+import 'package:dhuddu/screens/comman/user_type_select.dart';
+import 'package:dhuddu/screens/publisher/onboarding_publisher.dart';
+import 'package:dhuddu/util/test_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,7 +24,11 @@ class MyApp extends StatelessWidget {
       home: SplashScreen(),
       routes: {
         Dashbard.routeName: (ctx) => Dashbard(),
-        StartScreen.routeName:(ctx) => StartScreen(),
+        //AuthScreen.routeName:(ctx) => AuthScreen(),
+        TestScreen.routeName:(ctx) => TestScreen(),
+        UserTypeSelectScreen.routeName : (ctx) => UserTypeSelectScreen(),
+        OnBoardingPublisherScreen.routeName:(ctx) => OnBoardingPublisherScreen(),
+        OnBoardingAdvertiserScreen.routeName:(ctx) => OnBoardingAdvertiserScreen(),
       },
     );
   }

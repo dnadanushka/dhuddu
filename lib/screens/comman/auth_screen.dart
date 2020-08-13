@@ -1,16 +1,22 @@
+import 'package:dhuddu/screens/advertiser/onboarding_advertiser.dart';
 import 'package:dhuddu/screens/dashboard.dart';
+import 'package:dhuddu/screens/comman/user_type_select.dart';
+import 'package:dhuddu/screens/publisher/onboarding_publisher.dart';
 import 'package:dhuddu/services/auth.dart';
 import 'package:dhuddu/util/constants.dart';
 import 'package:dhuddu/util/size_config.dart';
+import 'package:dhuddu/util/test_screen.dart';
 import 'package:flutter/material.dart';
 
-class StartScreen extends StatefulWidget {
+class AuthScreen extends StatefulWidget {
   static const routeName = '/start_screen';
+  final bool isAdvertiser;
+  AuthScreen(this.isAdvertiser);
   @override
-  _StartScreenState createState() => _StartScreenState();
+  _AuthScreenState createState() => _AuthScreenState();
 }
 
-class _StartScreenState extends State<StartScreen> {
+class _AuthScreenState extends State<AuthScreen> {
   bool _isLoggedIn = false;
   bool isLogin = true;
   Map userProfile;
@@ -40,8 +46,8 @@ class _StartScreenState extends State<StartScreen> {
       } catch (e) {
         print('error');
         Scaffold.of(context).showSnackBar(SnackBar(
-      content: Text("Error occured"),
-    ));
+          content: Text("Error occured"),
+        ));
       }
     } else {
       try {
@@ -51,8 +57,8 @@ class _StartScreenState extends State<StartScreen> {
       } catch (e) {
         print('error');
         Scaffold.of(context).showSnackBar(SnackBar(
-      content: Text("Error occured"),
-    ));
+          content: Text("Error occured"),
+        ));
       }
     }
   }
@@ -232,25 +238,42 @@ class _StartScreenState extends State<StartScreen> {
                 },
               ),
             ),
-            RaisedButton(
-              onPressed: () {
-                authenticate();
-              },
-              textColor: Colors.white,
-              padding: const EdgeInsets.all(0.0),
-              child: Container(
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: <Color>[
-                      Color(0xFF0D47A1),
-                      Color(0xFF1976D2),
-                      Color(0xFF42A5F5),
-                    ],
+
+            Container(
+              height: 50.0,
+              child: RaisedButton(
+                onPressed: () {
+                  widget.isAdvertiser
+                      ? Navigator.of(context)
+                          .pushNamed(OnBoardingAdvertiserScreen.routeName)
+                      : Navigator.of(context)
+                          .pushNamed(OnBoardingPublisherScreen.routeName);
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(80.0)),
+                padding: EdgeInsets.all(0.0),
+                child: Ink(
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          const Color(0xff1fdfa4),
+                          const Color(0xff11c0d4)
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
+                      borderRadius: BorderRadius.circular(30.0)),
+                  child: Container(
+                    constraints:
+                        BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
+                    alignment: Alignment.center,
+                    child: Text(
+                      isLogin ? 'Login' : 'Create',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ),
-                padding: const EdgeInsets.all(15.0),
-                child: Text(isLogin ? 'Login' : 'Create',
-                    style: TextStyle(fontSize: 20)),
               ),
             ),
           ],

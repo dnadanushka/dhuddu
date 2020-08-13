@@ -5,9 +5,11 @@ class Constants {
   String appName = "Dhuddu";
 
   //Colors
-  static Color lightGreen = Color(0XFF1FDFA4);
-  static Color lightBlue = Color(0XFF11C0D4);
-  static Color lightGray = Color(0XFF8D91A5);
-  
+  static const Color lightGreen = Color(0XFF1FDFA4);
+  static const Color lightBlue = Color(0XFF11C0D4);
+  static const Color lightGray = Color(0XFF8D91A5);
+  static const Color grey1 = Color(0XFFECF3F5);
+  static const Color lightGreen1 = Color(0XFF1EDDA8);
+  static const Color darkPurple = Color(0XFF384874);
   
 }
