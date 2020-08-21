@@ -1,4 +1,5 @@
 import 'package:dhuddu/Component491.dart';
+import 'package:dhuddu/iPhoneXXS11Pro80.dart';
 import 'package:dhuddu/iPhoneXXS11Pro94.dart';
 import 'package:dhuddu/util/size_config.dart';
 import 'package:flutter/material.dart';
@@ -233,7 +234,7 @@ class _OnBoardingPublisherScreenState extends State<OnBoardingPublisherScreen> {
                   isLast? Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => iPhoneXXS11Pro94()),
+                        builder: (context) => iPhoneXXS11Pro80()),
                   ):_pageController.jumpToPage(_currentPageNotifier.value + 1);
                   
                 },

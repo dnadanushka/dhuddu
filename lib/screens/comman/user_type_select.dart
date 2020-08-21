@@ -90,8 +90,22 @@ class _UserTypeSelectScreenState extends State<UserTypeSelectScreen> {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text('Publisher'),
-                      Text('Advertiser'),
+                      Text(
+                        'PUBLISHER',
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          color: const Color(0xff515f86),
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      Text(
+                        'ADVERTISER',
+                        style: TextStyle(
+                          fontFamily: 'Roboto',
+                          color: const Color(0xff515f86),
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
                     ],
                   )
                 ],
@@ -142,7 +156,8 @@ class _UserTypeSelectScreenState extends State<UserTypeSelectScreen> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => AuthScreen(!isPublisher)),
+                    MaterialPageRoute(
+                        builder: (context) => AuthScreen(!isPublisher)),
                   );
                 },
                 shape: RoundedRectangleBorder(
@@ -164,9 +179,14 @@ class _UserTypeSelectScreenState extends State<UserTypeSelectScreen> {
                         BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
                     alignment: Alignment.center,
                     child: Text(
-                      "Continue",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.white),
+                      'CONTINUE',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 14,
+                        color: const Color(0xffffffff),
+                        letterSpacing: 0.7000000000000001,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                 ),
