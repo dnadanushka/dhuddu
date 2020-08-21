@@ -15,6 +15,7 @@ import 'package:dhuddu/Component491.dart';
 import 'package:dhuddu/XDiPhoneXXS11Pro73.dart';
 import 'package:dhuddu/XDiPhoneXXS11Pro91.dart';
 import 'package:dhuddu/iPhoneXXS11Pro94.dart';
+import 'package:dhuddu/screens/advertiser/advertiser_dashboard.dart';
 import 'package:dhuddu/util/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:page_view_indicators/circle_page_indicator.dart';
@@ -251,7 +252,7 @@ class _OnBoardingAdvertiserScreenState extends State<OnBoardingAdvertiserScreen>
                   isLast? Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => XDiPhoneXXS11Pro91()),
+                        builder: (context) => AdvertiserDashboard()),
                   ):_pageController.jumpToPage(_currentPageNotifier.value + 1);
 
                 },
