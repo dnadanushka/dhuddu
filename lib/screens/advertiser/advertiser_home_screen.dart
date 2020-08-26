@@ -58,7 +58,7 @@ class AdvertiserHomeScreen extends StatelessWidget {
                       ],
                     ),
                     Container(
-                      color: Colors.red,
+                     // color: Colors.red,
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [

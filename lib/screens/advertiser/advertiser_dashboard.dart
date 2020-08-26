@@ -1,4 +1,5 @@
 import 'package:dhuddu/screens/advertiser/advertiser_home_screen.dart';
+import 'package:dhuddu/screens/advertiser/create_campaign.dart';
 import 'package:flutter/material.dart';
 
 class AdvertiserDashboard extends StatefulWidget {
@@ -10,7 +11,7 @@ class _AdvertiserDashboardState extends State<AdvertiserDashboard> {
   int _currentIndex = 0;
   final List<Widget> _children = [
     AdvertiserHomeScreen(),
-    Container(color: Colors.red),
+    CreateCampaign(),
     Container(color: Colors.orange),
     Container(color: Colors.blue),
     Container(color: Colors.green),
