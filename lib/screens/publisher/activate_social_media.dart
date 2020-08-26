@@ -1,3 +1,4 @@
+import 'package:dhuddu/screens/publisher/campaign_lists.dart';
 import 'package:dhuddu/util/size_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -240,6 +241,10 @@ class ActivatedSocialMedia extends StatelessWidget {
             height: 50.0,
             child: RaisedButton(
               onPressed: () {
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => CampaignLists()),
+              );
               },
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(80.0)),
