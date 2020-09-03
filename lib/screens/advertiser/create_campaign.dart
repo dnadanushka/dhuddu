@@ -1,164 +1,541 @@
 import 'package:adobe_xd/adobe_xd.dart';
+import 'package:dhuddu/screens/advertiser/add_materials.dart';
+import 'package:dhuddu/util/constants.dart';
 import 'package:dhuddu/util/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CreateCampaign extends StatelessWidget {
+  static const routeName = '/create-campaing-screen';
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Container(
-      color: const Color(0xfff5f5f8),
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              width: double.infinity,
-              height: SizeConfig.blockSizeVertical * 30,
-              decoration: BoxDecoration(
-                color: const Color(0xff515f86),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color(0xff515f86),
+        elevation: 0.0,
+        centerTitle: true,
+        title: Text(
+          'Create campaign',
+          style: TextStyle(
+            fontFamily: 'Poppins',
+            fontSize: 14,
+            color: const Color(0xffffffff),
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+      body: Container(
+        color: const Color(0xfff5f5f8),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: double.infinity,
+                height: SizeConfig.blockSizeVertical * 20,
+                decoration: BoxDecoration(
+                  color: const Color(0xff515f86),
+                ),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: SizeConfig.blockSizeVertical * 5,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: SvgPicture.asset(
+                        'assets/progress1.svg',
+                        width: SizeConfig.safeBlockHorizontal * 100,
+                      ),
+                    ),
+                    //StepsWidget(),
+                    StepsInfo()
+                  ],
+                ),
               ),
-              child: Column(
+              Row(
                 children: [
-                  SizedBox(
-                    height: SizeConfig.blockSizeVertical * 5,
-                  ),
-                  Text(
-                    'Create campaign',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 14,
-                      color: const Color(0xffffffff),
-                      fontWeight: FontWeight.w600,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Update product details',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 16,
+                        color: const Color(0xff000000),
+                        fontWeight: FontWeight.w600,
+                      ),
+                      textAlign: TextAlign.left,
                     ),
                   ),
-                  SizedBox(
-                    height: SizeConfig.blockSizeVertical * 5,
-                  ),
-                  StepsWidget(),
-                  StepsInfo()
                 ],
               ),
-            ),
-            Row(
-              children: [
-                Text(
-                  'Update product details',
-                  style: TextStyle(
-                    fontFamily: 'Poppins',
-                    fontSize: 16,
-                    color: const Color(0xff000000),
-                    fontWeight: FontWeight.w600,
-                  ),
-                  textAlign: TextAlign.left,
-                ),
-              ],
-            ),
-          
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Campaign Name',
-                ),
-                
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Product Name',
-                ),
-                
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Product Link',
-                ),
-                
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Select Category',
-                ),
-                
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Product Features',
-                ),
-                
-              ),
-            ),
               Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Campaign Status',
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  'Campaign Name',
+                  style: TextStyle(
+                    color: Constants.lightPurpleGray,
+                    fontSize: 12,
+                    fontFamily: 'Roboto',
+                  ),
                 ),
-                
               ),
-            ),
-            Center(
-              child: Container(
-                height: 50.0,
-                child: RaisedButton(
-                  onPressed: () {
-         
-                  },
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(80.0)),
-                  padding: EdgeInsets.all(0.0),
-                  child: Ink(
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            const Color(0xff1fdfa4),
-                            const Color(0xff11c0d4)
-                          ],
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: new BorderRadius.circular(10.0),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 15, right: 15, top: 5),
+                    child: TextFormField(
+                      style: TextStyle(
+                        color: Constants.purpleText,
+                        fontSize: 14,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w500,
+                      ),
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Campaign Name',
+                        hintStyle: TextStyle(
+                          color: Constants.purpleText,
+                          fontSize: 14,
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w500,
                         ),
-                        borderRadius: BorderRadius.circular(30.0)),
-                    child: Container(
-                      constraints:
-                          BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
-                      alignment: Alignment.center,
-                      child: Text(
-                        'CONTINUE',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  'Product Name',
+                  style: TextStyle(
+                    color: Constants.lightPurpleGray,
+                    fontSize: 12,
+                    fontFamily: 'Roboto',
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: new BorderRadius.circular(10.0),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 15, right: 15, top: 5),
+                    child: TextFormField(
+                      style: TextStyle(
+                        color: Constants.purpleText,
+                        fontSize: 14,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w500,
+                      ),
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Product Name',
+                        hintStyle: TextStyle(
+                          color: Constants.purpleText,
+                          fontSize: 14,
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  'Product Link',
+                  style: TextStyle(
+                    color: Constants.lightPurpleGray,
+                    fontSize: 12,
+                    fontFamily: 'Roboto',
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: new BorderRadius.circular(10.0),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 15, right: 15, top: 5),
+                    child: TextFormField(
+                      style: TextStyle(
+                        color: Constants.purpleText,
+                        fontSize: 14,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w500,
+                      ),
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Product Link',
+                        hintStyle: TextStyle(
+                          color: Constants.purpleText,
+                          fontSize: 14,
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  'Select Category',
+                  style: TextStyle(
+                    color: Constants.lightPurpleGray,
+                    fontSize: 12,
+                    fontFamily: 'Roboto',
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: new BorderRadius.circular(10.0),
+                  ),
+                  child: Padding(
+                      padding: EdgeInsets.only(left: 15, right: 15, top: 5),
+                      child: new DropdownButton<String>(
+                        items: <String>['A', 'B', 'C', 'D'].map((String value) {
+                          return new DropdownMenuItem<String>(
+                            value: value,
+                            child: new Text(value),
+                          );
+                        }).toList(),
+                        onChanged: (_) {},
+                        isExpanded: true,
+                      )),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  'Product Features',
+                  style: TextStyle(
+                    color: Constants.lightPurpleGray,
+                    fontSize: 12,
+                    fontFamily: 'Roboto',
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: new BorderRadius.circular(10.0),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 15, right: 15, top: 5),
+                    child: TextFormField(
+                      minLines: 2,
+                      maxLines: 5,
+                      style: TextStyle(
+                        color: Constants.purpleText,
+                        fontSize: 14,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w500,
+                      ),
+                      keyboardType: TextInputType.multiline,
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: 'Product Features',
+                        hintStyle: TextStyle(
+                          color: Constants.purpleText,
+                          fontSize: 14,
+                          fontFamily: 'Roboto',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Set Campaign Date',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 16,
+                        color: const Color(0xff000000),
+                        fontWeight: FontWeight.w600,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Flexible(
+                    flex: 1,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8.0),
+                          child: Text(
+                            'Start Date',
+                            style: TextStyle(
+                              color: Constants.lightPurpleGray,
+                              fontSize: 12,
+                              fontFamily: 'Roboto',
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: new BorderRadius.circular(10.0),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 8.0),
+                              child: TextFormField(
+                                style: TextStyle(
+                                  color: Constants.purpleText,
+                                  fontSize: 14,
+                                  fontFamily: 'Roboto',
+                                  fontWeight: FontWeight.w500,
+                                ),
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  hintText: 'Start Date',
+                                  hintStyle: TextStyle(
+                                    color: Constants.purpleText,
+                                    fontSize: 14,
+                                    fontFamily: 'Roboto',
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Flexible(
+                    flex: 1,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 8.0),
+                          child: Text(
+                            'End Date',
+                            style: TextStyle(
+                              color: Constants.lightPurpleGray,
+                              fontSize: 12,
+                              fontFamily: 'Roboto',
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: new BorderRadius.circular(10.0),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 8.0),
+                              child: TextFormField(
+                                style: TextStyle(
+                                  color: Constants.purpleText,
+                                  fontSize: 14,
+                                  fontFamily: 'Roboto',
+                                  fontWeight: FontWeight.w500,
+                                ),
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  hintText: 'End Date',
+                                  hintStyle: TextStyle(
+                                    color: Constants.purpleText,
+                                    fontSize: 14,
+                                    fontFamily: 'Roboto',
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Set Campaign Status',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 16,
+                        color: const Color(0xff000000),
+                        fontWeight: FontWeight.w600,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  'Select Status',
+                  style: TextStyle(
+                    color: Constants.lightPurpleGray,
+                    fontSize: 12,
+                    fontFamily: 'Roboto',
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: new BorderRadius.circular(10.0),
+                  ),
+                  child: Padding(
+                      padding: EdgeInsets.only(left: 15, right: 15, top: 5),
+                      child: new DropdownButton<String>(
+                        items: <String>['A', 'B', 'C', 'D'].map((String value) {
+                          return new DropdownMenuItem<String>(
+                            value: value,
+                            child: new Text(value),
+                          );
+                        }).toList(),
+                        onChanged: (_) {},
+                        isExpanded: true,
+                      )),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  'Cover Image',
+                  style: TextStyle(
+                    color: Constants.lightPurpleGray,
+                    fontSize: 12,
+                    fontFamily: 'Roboto',
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: new BorderRadius.circular(10.0),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              'Upload Campaign cover',
+                              style: TextStyle(
+                                color: Constants.purpleText,
+                                fontSize: 14,
+                                fontFamily: 'Roboto',
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text('Screenshot of your product',style: TextStyle(
+                            color: Constants.purpleText,
+                            fontSize: 10,
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.w500,
+                        ),),
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: GestureDetector(
+                          child: Image.asset('assets/upload.png'),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Center(
+                child: Container(
+                  height: 50.0,
+                  child: RaisedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, AddmaterialsScreen.routeName);
+                    },
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(80.0)),
+                    padding: EdgeInsets.all(0.0),
+                    child: Ink(
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [
+                              const Color(0xff1fdfa4),
+                              const Color(0xff11c0d4)
+                            ],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          ),
+                          borderRadius: BorderRadius.circular(30.0)),
+                      child: Container(
+                        constraints:
+                            BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
+                        alignment: Alignment.center,
+                        child: Text(
+                          'CONTINUE',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
