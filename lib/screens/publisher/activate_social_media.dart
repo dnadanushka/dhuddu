@@ -11,11 +11,11 @@ class ActivatedSocialMedia extends StatelessWidget {
       backgroundColor: const Color(0xFFF5F5F8),
       body: Column(
 //        crossAxisAlignment: CrossAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
 //        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.only(top: SizeConfig.safeBlockVertical * 5),
+            padding: EdgeInsets.only(top: SizeConfig.safeBlockVertical * 5,left: SizeConfig.blockSizeHorizontal*3),
             child: Text(
               'DHUDDU',
               style: TextStyle(
@@ -28,7 +28,7 @@ class ActivatedSocialMedia extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: SizeConfig.safeBlockVertical * 10),
+            padding: EdgeInsets.only(top: SizeConfig.safeBlockVertical * 10,left: SizeConfig.blockSizeHorizontal*3),
             child: Text(
               'Hi Bruce!',
               style: TextStyle(
@@ -41,7 +41,7 @@ class ActivatedSocialMedia extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: SizeConfig.safeBlockVertical * 2),
+            padding: EdgeInsets.only(top: SizeConfig.safeBlockVertical * 2,left: SizeConfig.blockSizeHorizontal*3),
             child: Text(
               'Activate Social Media',
               style: TextStyle(
@@ -54,7 +54,7 @@ class ActivatedSocialMedia extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: SizeConfig.safeBlockVertical * 2),
+            padding: EdgeInsets.only(top: SizeConfig.safeBlockVertical * 2,left: SizeConfig.blockSizeHorizontal*3),
             child: Text(
               'Loren Ipsum',
               style: TextStyle(
@@ -95,6 +95,7 @@ class ActivatedSocialMedia extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           'Facebook',
@@ -180,6 +181,7 @@ class ActivatedSocialMedia extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           'Instagram',
@@ -242,40 +244,42 @@ class ActivatedSocialMedia extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            height: 50.0,
-            child: RaisedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => CampaignLists()),
-                );
-              },
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(80.0)),
-              padding: EdgeInsets.all(0.0),
-              child: Ink(
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        const Color(0xff1fdfa4),
-                        const Color(0xff11c0d4)
-                      ],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
-                    ),
-                    borderRadius: BorderRadius.circular(30.0)),
-                child: Container(
-                  constraints: BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
-                  alignment: Alignment.center,
-                  child: Text(
-                    'CONTINUE',
-                    style: TextStyle(
-                      fontFamily: 'Poppins',
-                      fontSize: 14,
-                      color: const Color(0xffffffff),
-                      letterSpacing: 0.7000000000000001,
-                      fontWeight: FontWeight.w600,
+          Center(
+            child: Container(
+              height: 50.0,
+              child: RaisedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => CampaignLists()),
+                  );
+                },
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(80.0)),
+                padding: EdgeInsets.all(0.0),
+                child: Ink(
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          const Color(0xff1fdfa4),
+                          const Color(0xff11c0d4)
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      ),
+                      borderRadius: BorderRadius.circular(30.0)),
+                  child: Container(
+                    constraints: BoxConstraints(maxWidth: 300.0, minHeight: 50.0),
+                    alignment: Alignment.center,
+                    child: Text(
+                      'CONTINUE',
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 14,
+                        color: const Color(0xffffffff),
+                        letterSpacing: 0.7000000000000001,
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
                 ),

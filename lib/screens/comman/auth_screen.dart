@@ -67,6 +67,7 @@ class _AuthScreenState extends State<AuthScreen> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
+      backgroundColor: Constants.picBack,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -198,44 +199,132 @@ class _AuthScreenState extends State<AuthScreen> {
             //     : Container(),
             !isLogin
                 ? Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: TextFormField(
-                      controller: _usernameController,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
-                        labelText: 'Username',
+                    padding: EdgeInsets.all(8.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: new BorderRadius.circular(10.0),
+                        // border: Border(left: BorderSide(color: Colors.red,width: 2.0))
                       ),
-                      onSaved: (newValue) {
-                        _username = newValue.trim();
-                      },
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 15, right: 15, top: 5),
+                        child: TextFormField(
+                          controller: _usernameController,
+                          onSaved: (newValue) {
+                            _username = newValue.trim();
+                          },
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                            fontFamily: 'Roboto',
+                            fontWeight: FontWeight.w500,
+                          ),
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: 'john',
+                            labelText: 'Username',
+                            labelStyle: TextStyle(
+                              color: Constants.purpleText,
+                              fontSize: 12,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w500,
+                            ),
+                            hintStyle: TextStyle(
+                              color: Constants.purpleText,
+                              fontSize: 14,
+                              fontFamily: 'Roboto',
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
                   )
                 : Container(),
+
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                controller: _emailController,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Email',
+              padding: EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: new BorderRadius.circular(10.0),
+                  // border: Border(left: BorderSide(color: Colors.red,width: 2.0))
                 ),
-                onSaved: (newValue) {
-                  _email = newValue.trim();
-                },
+                child: Padding(
+                  padding: EdgeInsets.only(left: 15, right: 15, top: 5),
+                  child: TextFormField(
+                    controller: _emailController,
+                    onSaved: (newValue) {
+                      _email = newValue.trim();
+                    },
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w500,
+                    ),
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'john@gmail.com',
+                      labelText: 'Email',
+                      labelStyle: TextStyle(
+                        color: Constants.purpleText,
+                        fontSize: 12,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w500,
+                      ),
+                      hintStyle: TextStyle(
+                        color: Constants.purpleText,
+                        fontSize: 14,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextFormField(
-                controller: _passwordController,
-                obscureText: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'Password',
+              padding: EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: new BorderRadius.circular(10.0),
+                  // border: Border(left: BorderSide(color: Colors.red,width: 2.0))
                 ),
-                onSaved: (newValue) {
-                  _password = newValue.trim();
-                },
+                child: Padding(
+                  padding: EdgeInsets.only(left: 15, right: 15, top: 5),
+                  child: TextFormField(
+                    controller: _passwordController,
+                    onSaved: (newValue) {
+                      _password = newValue.trim();
+                    },
+                    obscureText: true,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.w500,
+                    ),
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Password',
+                      labelText: 'Password',
+                      labelStyle: TextStyle(
+                        color: Constants.purpleText,
+                        fontSize: 12,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w500,
+                      ),
+                      hintStyle: TextStyle(
+                        color: Constants.purpleText,
+                        fontSize: 14,
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ),
 
