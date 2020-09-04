@@ -1,3 +1,4 @@
+import 'package:dhuddu/screens/comman/profile.dart';
 import 'package:dhuddu/util/constants.dart';
 import 'package:dhuddu/util/size_config.dart';
 import 'package:flutter/material.dart';
@@ -87,7 +88,7 @@ class Redeem extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => Redeem()),
+                            MaterialPageRoute(builder: (context) => Profile()),
                           );
                         },
                         shape: RoundedRectangleBorder(
