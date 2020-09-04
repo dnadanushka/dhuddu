@@ -373,21 +373,21 @@ class XDiPhoneXXS11Pro111 extends StatelessWidget {
               textAlign: TextAlign.left,
             ),
           ),
-          Transform.translate(
-            offset: Offset(40.0, 664.0),
-            child: Container(
-              width: 32.0,
-              height: 32.0,
-              decoration: BoxDecoration(
-                borderRadius:
-                    BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
-                image: DecorationImage(
-                  image: const AssetImage(''),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ),
+          // Transform.translate(
+          //   offset: Offset(40.0, 664.0),
+          //   child: Container(
+          //     width: 32.0,
+          //     height: 32.0,
+          //     decoration: BoxDecoration(
+          //       borderRadius:
+          //           BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+          //       image: DecorationImage(
+          //         image: const AssetImage(''),
+          //         fit: BoxFit.cover,
+          //       ),
+          //     ),
+          //   ),
+          // ),
           Transform.translate(
             offset: Offset(40.0, 729.0),
             child: Container(
@@ -454,18 +454,18 @@ class XDiPhoneXXS11Pro111 extends StatelessWidget {
               ),
             ),
           ),
-          Transform.translate(
-            offset: Offset(264.0, 664.0),
-            child: Container(
-              width: 32.0,
-              height: 32.0,
-              decoration: BoxDecoration(
-                borderRadius:
-                    BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
-                color: const Color(0xfff5f5f8),
-              ),
-            ),
-          ),
+          // Transform.translate(
+          //   offset: Offset(264.0, 664.0),
+          //   child: Container(
+          //     width: 32.0,
+          //     height: 32.0,
+          //     decoration: BoxDecoration(
+          //       borderRadius:
+          //           BorderRadius.all(Radius.elliptical(9999.0, 9999.0)),
+          //       color: const Color(0xfff5f5f8),
+          //     ),
+          //   ),
+          // ),
           Transform.translate(
             offset: Offset(264.0, 729.0),
             child: Container(

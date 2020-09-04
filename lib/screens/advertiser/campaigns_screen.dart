@@ -3,7 +3,7 @@ import 'package:dhuddu/util/constants.dart';
 import 'package:dhuddu/util/size_config.dart';
 import 'package:flutter/material.dart';
 
-class AdvertiserHomeScreen extends StatelessWidget {
+class CampaignsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -242,5 +242,3 @@ class BoxButton extends StatelessWidget {
     );
   }
 }
-
-

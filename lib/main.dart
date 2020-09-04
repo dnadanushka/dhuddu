@@ -5,6 +5,7 @@ import 'package:dhuddu/screens/advertiser/load_payment.dart';
 import 'package:dhuddu/screens/advertiser/onboarding_advertiser.dart';
 import 'package:dhuddu/screens/advertiser/payment_success.dart';
 import 'package:dhuddu/screens/advertiser/price_detail.dart';
+import 'package:dhuddu/screens/advertiser/track_campaign.dart';
 import 'package:dhuddu/screens/dashboard.dart';
 import 'package:dhuddu/screens/comman/spalsh.dart';
 import 'package:dhuddu/screens/comman/auth_screen.dart';
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
         LoadPayment.routeName:(ctx) => LoadPayment(),
         PaymentSuccessScreen.routeName:(ctx) => PaymentSuccessScreen(),
         CampaignStartedScreen.routeName:(ctx) => CampaignStartedScreen(),
+        TrackCampaignScreen.routeName:(ctx) => TrackCampaignScreen(),
       },
     );
   }
