@@ -1,24 +1,26 @@
 import 'package:dhuddu/XDiPhoneXXS11Pro109.dart';
+import 'package:dhuddu/screens/advertiser/campaign_started.dart';
+import 'package:dhuddu/util/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class XDiPhoneXXS11Pro123 extends StatelessWidget {
-  XDiPhoneXXS11Pro123({
+class PaymentSuccessWidget extends StatelessWidget {
+  PaymentSuccessWidget({
     Key key,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xfff5f5f8),
-      body: Stack(
+    return Container(
+      //color: const Color(0xfff5f5f8),
+      child: Stack(
         children: <Widget>[
           Container(
             width: 375.0,
             height: 812.0,
             decoration: BoxDecoration(
-              color: const Color(0xff515f86),
-            ),
+                color: const Color(0xff515f86),
+                border: Border.all(color: Constants.purpleText)),
           ),
           Transform.translate(
             offset: Offset(92.0, 206.0),
@@ -166,43 +168,59 @@ class XDiPhoneXXS11Pro123 extends StatelessWidget {
               ),
             ),
           ),
-          Transform.translate(
-            offset: Offset(42.0, 690.0),
-            child: Container(
-              width: 289.0,
-              height: 56.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(28.0),
-                gradient: LinearGradient(
-                  begin: Alignment(-1.27, -1.0),
-                  end: Alignment(0.79, 0.67),
-                  colors: [const Color(0xff1fdfa4), const Color(0xff11c0d4)],
-                  stops: [0.0, 1.0],
-                ),
-              ),
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(115.0, 708.0),
-            child: Text(
-              'Publish CAMPAIGN',
-              style: TextStyle(
-                fontFamily: 'Poppins',
-                fontSize: 14,
-                color: const Color(0xffffffff),
-                letterSpacing: 0.7000000000000001,
-                fontWeight: FontWeight.w600,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(25.1, 44.6),
-            child: SvgPicture.string(
-              _svg_3guqp5,
-              allowDrawingOutsideViewBox: true,
-            ),
-          ),
+          // GestureDetector(
+          //   onTap: () {
+          //     print('object');
+          //     Navigator.pushNamed(context, CampaignStartedScreen.routeName);
+          //   },
+          //   child: Container(
+          //     child: Stack(
+          //       children: [
+          //         Transform.translate(
+          //           offset: Offset(42.0, 690.0),
+          //           child: Container(
+          //             width: 289.0,
+          //             height: 56.0,
+          //             decoration: BoxDecoration(
+          //               borderRadius: BorderRadius.circular(28.0),
+          //               gradient: LinearGradient(
+          //                 begin: Alignment(-1.27, -1.0),
+          //                 end: Alignment(0.79, 0.67),
+          //                 colors: [
+          //                   const Color(0xff1fdfa4),
+          //                   const Color(0xff11c0d4)
+          //                 ],
+          //                 stops: [0.0, 1.0],
+          //               ),
+          //             ),
+          //           ),
+          //         ),
+          //         Transform.translate(
+          //           offset: Offset(115.0, 708.0),
+          //           child: Text(
+          //             'Publish CAMPAIGN',
+          //             style: TextStyle(
+          //               fontFamily: 'Poppins',
+          //               fontSize: 14,
+          //               color: const Color(0xffffffff),
+          //               letterSpacing: 0.7000000000000001,
+          //               fontWeight: FontWeight.w600,
+          //             ),
+          //             textAlign: TextAlign.left,
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
+
+          // Transform.translate(
+          //   offset: Offset(25.1, 44.6),
+          //   child: SvgPicture.string(
+          //     _svg_3guqp5,
+          //     allowDrawingOutsideViewBox: true,
+          //   ),
+          // ),
           Transform.translate(
             offset: Offset(193.0, 364.0),
             child: Container(
@@ -358,16 +376,6 @@ class XDiPhoneXXS11Pro123 extends StatelessWidget {
                 ],
               ),
             ),
-          ),
-          GestureDetector(
-            onTap: () {
-              print('object');
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => XDiPhoneXXS11Pro109()),
-              );
-            },
-            child: Container(width: 100,height: 100,color: Colors.white),
           ),
         ],
       ),

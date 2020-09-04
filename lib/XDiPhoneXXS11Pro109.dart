@@ -3,15 +3,15 @@ import 'package:adobe_xd/pinned.dart';
 import './XDComponent331.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class XDiPhoneXXS11Pro109 extends StatelessWidget {
-  XDiPhoneXXS11Pro109({
+class CampaignStartedWidget extends StatelessWidget {
+  CampaignStartedWidget({
     Key key,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xfff5f5f8),
-      body: Stack(
+    return Container(
+      color: const Color(0xfff5f5f8),
+      child: Stack(
         children: <Widget>[
           Container(
             width: 375.0,
@@ -49,190 +49,190 @@ class XDiPhoneXXS11Pro109 extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Pinned.fromSize(
-                          bounds: Rect.fromLTWH(325.0, 16.0, 24.0, 24.0),
-                          size: Size(375.0, 72.0),
-                          pinRight: true,
-                          fixedWidth: true,
-                          fixedHeight: true,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: const Color(0x00ffffff),
-                              border: Border.all(
-                                  width: 1.0, color: const Color(0x00707070)),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromSize(
-                          bounds: Rect.fromLTWH(24.0, 16.0, 24.0, 24.0),
-                          size: Size(375.0, 72.0),
-                          pinLeft: true,
-                          fixedWidth: true,
-                          fixedHeight: true,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: const Color(0x00ffffff),
-                              border: Border.all(
-                                  width: 1.0, color: const Color(0x00707070)),
-                            ),
-                          ),
-                        ),
-                        Pinned.fromSize(
-                          bounds: Rect.fromLTWH(29.0, 19.0, 15.9, 17.9),
-                          size: Size(375.0, 72.0),
-                          pinLeft: true,
-                          fixedWidth: true,
-                          fixedHeight: true,
-                          child:
-                              // Adobe XD layer: 'HVqt0y.tif' (group)
-                              Stack(
-                            children: <Widget>[
-                              Pinned.fromSize(
-                                bounds: Rect.fromLTWH(0.0, 0.0, 15.9, 17.9),
-                                size: Size(15.9, 17.9),
-                                pinLeft: true,
-                                pinRight: true,
-                                pinTop: true,
-                                pinBottom: true,
-                                child: Stack(
-                                  children: <Widget>[
-                                    Pinned.fromSize(
-                                      bounds:
-                                          Rect.fromLTWH(0.0, 0.0, 15.9, 17.9),
-                                      size: Size(15.9, 17.9),
-                                      pinLeft: true,
-                                      pinRight: true,
-                                      pinTop: true,
-                                      pinBottom: true,
-                                      child: SvgPicture.string(
-                                        _svg_eus0t,
-                                        allowDrawingOutsideViewBox: true,
-                                        fit: BoxFit.fill,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Pinned.fromSize(
-                          bounds: Rect.fromLTWH(23.0, 44.0, 27.0, 13.0),
-                          size: Size(375.0, 72.0),
-                          pinLeft: true,
-                          fixedWidth: true,
-                          fixedHeight: true,
-                          child: Text(
-                            'Home',
-                            style: TextStyle(
-                              fontFamily: 'Roboto',
-                              fontSize: 10,
-                              color: const Color(0xff959caf),
-                            ),
-                            textAlign: TextAlign.left,
-                          ),
-                        ),
-                        Pinned.fromSize(
-                          bounds: Rect.fromLTWH(248.0, 44.0, 24.0, 13.0),
-                          size: Size(375.0, 72.0),
-                          fixedWidth: true,
-                          fixedHeight: true,
-                          child: Text(
-                            'Sales',
-                            style: TextStyle(
-                              fontFamily: 'Roboto',
-                              fontSize: 10,
-                              color: const Color(0xff959caf),
-                            ),
-                            textAlign: TextAlign.left,
-                          ),
-                        ),
-                        Pinned.fromSize(
-                          bounds: Rect.fromLTWH(83.0, 44.0, 50.0, 13.0),
-                          size: Size(375.0, 72.0),
-                          fixedWidth: true,
-                          fixedHeight: true,
-                          child: Text(
-                            'Campaigns',
-                            style: TextStyle(
-                              fontFamily: 'Roboto',
-                              fontSize: 10,
-                              color: const Color(0xff959caf),
-                            ),
-                            textAlign: TextAlign.left,
-                          ),
-                        ),
-                        Pinned.fromSize(
-                          bounds: Rect.fromLTWH(323.0, 44.0, 29.0, 13.0),
-                          size: Size(375.0, 72.0),
-                          pinRight: true,
-                          fixedWidth: true,
-                          fixedHeight: true,
-                          child: Text(
-                            'Profile',
-                            style: TextStyle(
-                              fontFamily: 'Roboto',
-                              fontSize: 10,
-                              color: const Color(0xff959caf),
-                            ),
-                            textAlign: TextAlign.left,
-                          ),
-                        ),
-                        Pinned.fromSize(
-                          bounds: Rect.fromLTWH(164.0, 12.0, 48.0, 48.0),
-                          size: Size(375.0, 72.0),
-                          fixedWidth: true,
-                          fixedHeight: true,
-                          child: Stack(
-                            children: <Widget>[
-                              Pinned.fromSize(
-                                bounds: Rect.fromLTWH(0.0, 0.0, 48.0, 48.0),
-                                size: Size(48.0, 48.0),
-                                pinLeft: true,
-                                pinRight: true,
-                                pinTop: true,
-                                pinBottom: true,
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.all(
-                                        Radius.elliptical(9999.0, 9999.0)),
-                                    gradient: LinearGradient(
-                                      begin: Alignment(-0.7, -0.78),
-                                      end: Alignment(0.66, 0.71),
-                                      colors: [
-                                        const Color(0xff1fdfa4),
-                                        const Color(0xff11c0d4)
-                                      ],
-                                      stops: [0.0, 1.0],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Pinned.fromSize(
-                                bounds: Rect.fromLTWH(17.2, 23.6, 14.5, 1.0),
-                                size: Size(48.0, 48.0),
-                                fixedWidth: true,
-                                fixedHeight: true,
-                                child: SvgPicture.string(
-                                  _svg_9bpvzo,
-                                  allowDrawingOutsideViewBox: true,
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                              Pinned.fromSize(
-                                bounds: Rect.fromLTWH(24.4, 16.4, 1.0, 14.5),
-                                size: Size(48.0, 48.0),
-                                fixedWidth: true,
-                                fixedHeight: true,
-                                child: SvgPicture.string(
-                                  _svg_56tvi9,
-                                  allowDrawingOutsideViewBox: true,
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        // Pinned.fromSize(
+                        //   bounds: Rect.fromLTWH(325.0, 16.0, 24.0, 24.0),
+                        //   size: Size(375.0, 72.0),
+                        //   pinRight: true,
+                        //   fixedWidth: true,
+                        //   fixedHeight: true,
+                        //   child: Container(
+                        //     decoration: BoxDecoration(
+                        //       color: const Color(0x00ffffff),
+                        //       border: Border.all(
+                        //           width: 1.0, color: const Color(0x00707070)),
+                        //     ),
+                        //   ),
+                        // ),
+                        // Pinned.fromSize(
+                        //   bounds: Rect.fromLTWH(24.0, 16.0, 24.0, 24.0),
+                        //   size: Size(375.0, 72.0),
+                        //   pinLeft: true,
+                        //   fixedWidth: true,
+                        //   fixedHeight: true,
+                        //   child: Container(
+                        //     decoration: BoxDecoration(
+                        //       color: const Color(0x00ffffff),
+                        //       border: Border.all(
+                        //           width: 1.0, color: const Color(0x00707070)),
+                        //     ),
+                        //   ),
+                        // ),
+                        // Pinned.fromSize(
+                        //   bounds: Rect.fromLTWH(29.0, 19.0, 15.9, 17.9),
+                        //   size: Size(375.0, 72.0),
+                        //   pinLeft: true,
+                        //   fixedWidth: true,
+                        //   fixedHeight: true,
+                        //   child:
+                        //       // Adobe XD layer: 'HVqt0y.tif' (group)
+                        //       Stack(
+                        //     children: <Widget>[
+                        //       Pinned.fromSize(
+                        //         bounds: Rect.fromLTWH(0.0, 0.0, 15.9, 17.9),
+                        //         size: Size(15.9, 17.9),
+                        //         pinLeft: true,
+                        //         pinRight: true,
+                        //         pinTop: true,
+                        //         pinBottom: true,
+                        //         child: Stack(
+                        //           children: <Widget>[
+                        //             Pinned.fromSize(
+                        //               bounds:
+                        //                   Rect.fromLTWH(0.0, 0.0, 15.9, 17.9),
+                        //               size: Size(15.9, 17.9),
+                        //               pinLeft: true,
+                        //               pinRight: true,
+                        //               pinTop: true,
+                        //               pinBottom: true,
+                        //               child: SvgPicture.string(
+                        //                 _svg_eus0t,
+                        //                 allowDrawingOutsideViewBox: true,
+                        //                 fit: BoxFit.fill,
+                        //               ),
+                        //             ),
+                        //           ],
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
+                        // Pinned.fromSize(
+                        //   bounds: Rect.fromLTWH(23.0, 44.0, 27.0, 13.0),
+                        //   size: Size(375.0, 72.0),
+                        //   pinLeft: true,
+                        //   fixedWidth: true,
+                        //   fixedHeight: true,
+                        //   child: Text(
+                        //     'Home',
+                        //     style: TextStyle(
+                        //       fontFamily: 'Roboto',
+                        //       fontSize: 10,
+                        //       color: const Color(0xff959caf),
+                        //     ),
+                        //     textAlign: TextAlign.left,
+                        //   ),
+                        // ),
+                        // Pinned.fromSize(
+                        //   bounds: Rect.fromLTWH(248.0, 44.0, 24.0, 13.0),
+                        //   size: Size(375.0, 72.0),
+                        //   fixedWidth: true,
+                        //   fixedHeight: true,
+                        //   child: Text(
+                        //     'Sales',
+                        //     style: TextStyle(
+                        //       fontFamily: 'Roboto',
+                        //       fontSize: 10,
+                        //       color: const Color(0xff959caf),
+                        //     ),
+                        //     textAlign: TextAlign.left,
+                        //   ),
+                        // ),
+                        // Pinned.fromSize(
+                        //   bounds: Rect.fromLTWH(83.0, 44.0, 50.0, 13.0),
+                        //   size: Size(375.0, 72.0),
+                        //   fixedWidth: true,
+                        //   fixedHeight: true,
+                        //   child: Text(
+                        //     'Campaigns',
+                        //     style: TextStyle(
+                        //       fontFamily: 'Roboto',
+                        //       fontSize: 10,
+                        //       color: const Color(0xff959caf),
+                        //     ),
+                        //     textAlign: TextAlign.left,
+                        //   ),
+                        // ),
+                        // Pinned.fromSize(
+                        //   bounds: Rect.fromLTWH(323.0, 44.0, 29.0, 13.0),
+                        //   size: Size(375.0, 72.0),
+                        //   pinRight: true,
+                        //   fixedWidth: true,
+                        //   fixedHeight: true,
+                        //   child: Text(
+                        //     'Profile',
+                        //     style: TextStyle(
+                        //       fontFamily: 'Roboto',
+                        //       fontSize: 10,
+                        //       color: const Color(0xff959caf),
+                        //     ),
+                        //     textAlign: TextAlign.left,
+                        //   ),
+                        // ),
+                        // Pinned.fromSize(
+                        //   bounds: Rect.fromLTWH(164.0, 12.0, 48.0, 48.0),
+                        //   size: Size(375.0, 72.0),
+                        //   fixedWidth: true,
+                        //   fixedHeight: true,
+                        //   child: Stack(
+                        //     children: <Widget>[
+                        //       // Pinned.fromSize(
+                        //       //   bounds: Rect.fromLTWH(0.0, 0.0, 48.0, 48.0),
+                        //       //   size: Size(48.0, 48.0),
+                        //       //   pinLeft: true,
+                        //       //   pinRight: true,
+                        //       //   pinTop: true,
+                        //       //   pinBottom: true,
+                        //       //   child: Container(
+                        //       //     decoration: BoxDecoration(
+                        //       //       borderRadius: BorderRadius.all(
+                        //       //           Radius.elliptical(9999.0, 9999.0)),
+                        //       //       gradient: LinearGradient(
+                        //       //         begin: Alignment(-0.7, -0.78),
+                        //       //         end: Alignment(0.66, 0.71),
+                        //       //         colors: [
+                        //       //           const Color(0xff1fdfa4),
+                        //       //           const Color(0xff11c0d4)
+                        //       //         ],
+                        //       //         stops: [0.0, 1.0],
+                        //       //       ),
+                        //       //     ),
+                        //       //   ),
+                        //       // ),
+                        //       // Pinned.fromSize(
+                        //       //   bounds: Rect.fromLTWH(17.2, 23.6, 14.5, 1.0),
+                        //       //   size: Size(48.0, 48.0),
+                        //       //   fixedWidth: true,
+                        //       //   fixedHeight: true,
+                        //       //   child: SvgPicture.string(
+                        //       //     _svg_9bpvzo,
+                        //       //     allowDrawingOutsideViewBox: true,
+                        //       //     fit: BoxFit.fill,
+                        //       //   ),
+                        //       // ),
+                        //       Pinned.fromSize(
+                        //         bounds: Rect.fromLTWH(24.4, 16.4, 1.0, 14.5),
+                        //         size: Size(48.0, 48.0),
+                        //         fixedWidth: true,
+                        //         fixedHeight: true,
+                        //         child: SvgPicture.string(
+                        //           _svg_56tvi9,
+                        //           allowDrawingOutsideViewBox: true,
+                        //           fit: BoxFit.fill,
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
                         Pinned.fromSize(
                           bounds: Rect.fromLTWH(251.0, 16.0, 17.5, 22.4),
                           size: Size(375.0, 72.0),
@@ -514,28 +514,28 @@ class XDiPhoneXXS11Pro109 extends StatelessWidget {
               ),
             ),
           ),
-          Transform.translate(
-            offset: Offset(121.0, 575.0),
-            child: Text(
-              'TRACK CAMPAIGN',
-              style: TextStyle(
-                fontFamily: 'Poppins',
-                fontSize: 14,
-                color: const Color(0xffffffff),
-                letterSpacing: 0.7000000000000001,
-                fontWeight: FontWeight.w600,
-              ),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Transform.translate(
-            offset: Offset(101.0, 139.0),
-            child: SizedBox(
-              width: 173.0,
-              height: 153.0,
-              child: XDComponent331(),
-            ),
-          ),
+          // Transform.translate(
+          //   offset: Offset(121.0, 575.0),
+          //   child: Text(
+          //     'TRACK CAMPAIGN',
+          //     style: TextStyle(
+          //       fontFamily: 'Poppins',
+          //       fontSize: 14,
+          //       color: const Color(0xffffffff),
+          //       letterSpacing: 0.7000000000000001,
+          //       fontWeight: FontWeight.w600,
+          //     ),
+          //     textAlign: TextAlign.left,
+          //   ),
+          // ),
+          // Transform.translate(
+          //   offset: Offset(101.0, 139.0),
+          //   child: SizedBox(
+          //     width: 173.0,
+          //     height: 153.0,
+            //   child: XDComponent331(),
+          //   ),
+          // ),
         ],
       ),
     );

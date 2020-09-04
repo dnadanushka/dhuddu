@@ -1,4 +1,10 @@
+import 'package:dhuddu/screens/advertiser/add_materials.dart';
+import 'package:dhuddu/screens/advertiser/campaign_started.dart';
+import 'package:dhuddu/screens/advertiser/create_campaign.dart';
+import 'package:dhuddu/screens/advertiser/load_payment.dart';
 import 'package:dhuddu/screens/advertiser/onboarding_advertiser.dart';
+import 'package:dhuddu/screens/advertiser/payment_success.dart';
+import 'package:dhuddu/screens/advertiser/price_detail.dart';
 import 'package:dhuddu/screens/dashboard.dart';
 import 'package:dhuddu/screens/comman/spalsh.dart';
 import 'package:dhuddu/screens/comman/auth_screen.dart';
@@ -29,6 +35,12 @@ class MyApp extends StatelessWidget {
         UserTypeSelectScreen.routeName : (ctx) => UserTypeSelectScreen(),
         OnBoardingPublisherScreen.routeName:(ctx) => OnBoardingPublisherScreen(),
         OnBoardingAdvertiserScreen.routeName:(ctx) => OnBoardingAdvertiserScreen(),
+        CreateCampaign.routeName:(ctx) => CreateCampaign(),
+        AddmaterialsScreen.routeName:(ctx) => AddmaterialsScreen(),
+        PriceDetailScreen.routeName:(ctx) => PriceDetailScreen(),
+        LoadPayment.routeName:(ctx) => LoadPayment(),
+        PaymentSuccessScreen.routeName:(ctx) => PaymentSuccessScreen(),
+        CampaignStartedScreen.routeName:(ctx) => CampaignStartedScreen(),
       },
     );
   }
