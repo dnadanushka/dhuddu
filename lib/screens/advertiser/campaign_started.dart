@@ -1,5 +1,6 @@
 import 'package:dhuddu/XDComponent331.dart';
 import 'package:dhuddu/screens/advertiser/add_materials.dart';
+import 'package:dhuddu/screens/advertiser/track_campaign.dart';
 import 'package:dhuddu/util/constants.dart';
 import 'package:dhuddu/util/size_config.dart';
 import 'package:flutter/material.dart';
@@ -132,7 +133,7 @@ class CampaignStartedScreen extends StatelessWidget {
                     height: 50.0,
                     child: RaisedButton(
                       onPressed: () {
-                        
+                        Navigator.pushNamed(context, TrackCampaignScreen.routeName);
                       },
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(80.0)),

@@ -243,5 +243,4 @@ class BoxButton extends StatelessWidget {
   }
 }
 
-class CreateCampaig {
-}
+

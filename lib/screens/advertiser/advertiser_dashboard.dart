@@ -1,5 +1,7 @@
 import 'package:dhuddu/screens/advertiser/advertiser_home_screen.dart';
+import 'package:dhuddu/screens/advertiser/campaigns_screen.dart';
 import 'package:dhuddu/screens/advertiser/create_campaign.dart';
+import 'package:dhuddu/screens/advertiser/track_campaign.dart';
 import 'package:dhuddu/util/constants.dart';
 import 'package:dhuddu/util/size_config.dart';
 import 'package:flutter/material.dart';
@@ -14,9 +16,9 @@ class _AdvertiserDashboardState extends State<AdvertiserDashboard> {
   int _currentIndex = 0;
   final List<Widget> _children = [
     AdvertiserHomeScreen(),
+    CampaignsScreen(),
     CreateCampaign(),
-    Container(color: Colors.orange),
-    Container(color: Colors.blue),
+    TrackCampaignScreen(),
     Container(color: Colors.green),
     
   ];
