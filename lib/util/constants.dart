@@ -14,4 +14,5 @@ class Constants {
   static const Color lightPurple = Color(0XFF6674A0);
   static const Color lightPurpleGray =  Color(0XFF959CAF);
   static const Color purpleText = Color(0XFF515F86);
+  static const Color picBack = Color(0XFFF5F5F8);
 }

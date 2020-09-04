@@ -1,4 +1,5 @@
 import 'package:dhuddu/screens/advertiser/create_campaign.dart';
+import 'package:dhuddu/screens/advertiser/load_payment.dart';
 import 'package:dhuddu/util/constants.dart';
 import 'package:dhuddu/util/size_config.dart';
 import 'package:flutter/material.dart';
@@ -261,7 +262,7 @@ class PriceDetailScreen extends StatelessWidget {
                   height: 50.0,
                   child: RaisedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, PriceDetailScreen.routeName);
+                      Navigator.pushNamed(context, LoadPayment.routeName);
                     },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(80.0)),

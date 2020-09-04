@@ -1,4 +1,4 @@
-import 'package:dhuddu/XDiPhoneXXS11Pro123.dart';
+import 'package:dhuddu/payment_success_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:adobe_xd/pinned.dart';
 import './XDpaypal1.dart';
@@ -517,7 +517,7 @@ class XDiPhoneXXS11Pro108 extends StatelessWidget {
               print('object');
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => XDiPhoneXXS11Pro123()),
+                MaterialPageRoute(builder: (context) => PaymentSuccessWidget()),
               );
             },
             child: Container(width: 100,height: 100,color: Colors.white,),
