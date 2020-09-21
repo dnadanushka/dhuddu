@@ -1,6 +1,7 @@
 import 'package:dhuddu/util/constants.dart';
 import 'package:dhuddu/util/size_config.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class Profile extends StatelessWidget {
   const Profile({Key key}) : super(key: key);
@@ -19,6 +20,25 @@ class Profile extends StatelessWidget {
               color: Constants.purpleBlue,
               child: Column(
                 children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 15.0),
+                        child: Text(
+                          'Profile',
+                          style: TextStyle(
+                            fontFamily: 'Poppins',
+                            fontSize: 14,
+                            color: const Color(0xffffffff),
+                            fontWeight: FontWeight.w600,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ],
+                  ),
                   Padding(
                     padding: const EdgeInsets.only(left: 0, top: 20),
                     child: Row(
@@ -125,10 +145,10 @@ class Profile extends StatelessWidget {
                                   ),
                                   children: [
                                     TextSpan(
-                                      text: 'Campaign ID\n',
+                                      text: 'Total Sales\n',
                                     ),
                                     TextSpan(
-                                      text: '123333322',
+                                      text: '140',
                                       style: TextStyle(
                                         fontSize: 17,
                                         color: const Color(0xffffffff),
@@ -162,10 +182,10 @@ class Profile extends StatelessWidget {
                                   ),
                                   children: [
                                     TextSpan(
-                                      text: 'Budget\n',
+                                      text: 'Current Campaigns\n',
                                     ),
                                     TextSpan(
-                                      text: '\$100',
+                                      text: '140',
                                       style: TextStyle(
                                         fontSize: 17,
                                         color: const Color(0xffffffff),
@@ -207,10 +227,10 @@ class Profile extends StatelessWidget {
                                   ),
                                   children: [
                                     TextSpan(
-                                      text: 'Campaign ID\n',
+                                      text: 'Total Shared posts',
                                     ),
                                     TextSpan(
-                                      text: '123333322',
+                                      text: '1700',
                                       style: TextStyle(
                                         fontSize: 17,
                                         color: const Color(0xffffffff),
@@ -244,7 +264,7 @@ class Profile extends StatelessWidget {
                                   ),
                                   children: [
                                     TextSpan(
-                                      text: 'Budget\n',
+                                      text: 'Total Earned\n',
                                     ),
                                     TextSpan(
                                       text: '\$100',
@@ -267,7 +287,114 @@ class Profile extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
+          SliverToBoxAdapter(
+              child: Container(
+            padding: EdgeInsets.fromLTRB(20, 20, 10, 20),
+
+            // height: SizeConfig.safeBlockVertical * 25,
+            //color: Constants.purpleBlue,
+            child: Column(
+              children: [
+                ListTile(
+                  leading: SvgPicture.asset(
+                    'assets/green_pay.svg'
+                  ),
+                  title: Text(
+                    'Add Payment',
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontSize: 16,
+                      color: const Color(0xff515f86),
+                      height: 2.1875,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                 // subtitle: Container(),
+                ),
+                ListTile(
+                  leading: SvgPicture.asset(
+                    'assets/green_redeem.svg'
+                  ),
+                  title: Text(
+                    'Redeem',
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontSize: 16,
+                      color: const Color(0xff515f86),
+                      height: 2.1875,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                 // subtitle: Container(),
+                ),
+                ListTile(
+                  leading: SvgPicture.asset(
+                    'assets/green_faq.svg'
+                  ),
+                  title: Text(
+                    'FAQ\'S',
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontSize: 16,
+                      color: const Color(0xff515f86),
+                      height: 2.1875,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                 // subtitle: Container(),
+                ),
+                ListTile(
+                  leading: SvgPicture.asset(
+                    'assets/green_help.svg'
+                  ),
+                  title: Text(
+                    'Need Help?',
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontSize: 16,
+                      color: const Color(0xff515f86),
+                      height: 2.1875,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                 // subtitle: Container(),
+                ),
+                ListTile(
+                  leading: SvgPicture.asset(
+                    'assets/green_set.svg'
+                  ),
+                  title: Text(
+                    'Settings',
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontSize: 16,
+                      color: const Color(0xff515f86),
+                      height: 2.1875,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                 // subtitle: Container(),
+                ),
+                ListTile(
+                  leading: SvgPicture.asset(
+                    'assets/green_logout.svg'
+                  ),
+                  title: Text(
+                    'Logout',
+                    style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontSize: 16,
+                      color: const Color(0xff515f86),
+                      height: 2.1875,
+                    ),
+                    textAlign: TextAlign.left,
+                  ),
+                 // subtitle: Container(),
+                )
+              ],
+            ),
+          ))
         ],
       ),
     );

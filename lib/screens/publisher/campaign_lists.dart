@@ -1,3 +1,4 @@
+import 'package:dhuddu/util/constants.dart';
 import 'package:dhuddu/util/size_config.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -50,39 +51,46 @@ class CampaignLists extends StatelessWidget {
                             ),
                           ),
                           //  SizedBox(width: 300.0),
+                          Spacer(),
                           Padding(
-                            padding: EdgeInsets.only(
-                                left: SizeConfig.blockSizeHorizontal * 40),
+                            padding: EdgeInsets.only(right: 15.0),
                             child: Container(
-                              height: SizeConfig.blockSizeVertical * 5,
+                              // color: Colors.red,
                               decoration: BoxDecoration(
-                                color: Colors.red,
+                                color: Constants.lightPurple,
                                 shape: BoxShape.rectangle,
                                 borderRadius: BorderRadius.all(
                                   Radius.circular(10.0),
                                 ),
                               ),
+
                               child: Row(
                                 mainAxisSize: MainAxisSize.min,
                                 children: [
-                                  Image.asset(
-                                    'assets/wallet.png',
-                                    height: SizeConfig.blockSizeVertical * 2,
-                                  ),
-                                  Text(
-                                    '\$000.00',
-                                    style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 21,
-                                      color: const Color(0xffffffff),
-                                      fontWeight: FontWeight.w600,
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Image.asset(
+                                      'assets/wallet.png',
+                                      height: SizeConfig.blockSizeVertical * 4,
                                     ),
-                                    textAlign: TextAlign.left,
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      '\$0.00',
+                                      style: TextStyle(
+                                        fontFamily: 'Poppins',
+                                        fontSize: 21,
+                                        color: const Color(0xffffffff),
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                      textAlign: TextAlign.left,
+                                    ),
                                   ),
                                 ],
                               ),
                             ),
-                          ),
+                          )
                         ],
                       ),
                       SizedBox(height: SizeConfig.blockSizeVertical * 9),
@@ -148,104 +156,108 @@ class CampaignLists extends StatelessWidget {
                               Radius.circular(25.0),
                             ),
                           ),
-
                           child: Column(
-                            crossAxisAlignment:CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                            Padding(
-                            padding: EdgeInsets.only(left: 15.0,top: 15),
-                            child: Text(
-                              'Campaign Name',
-                              style: TextStyle(
-                                fontFamily: 'Quicksand',
-                                fontSize: 15.0,
-                                color: Colors.grey,
-                                // fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 15.0,top: 10),
-                            child: Text(
-                              'Furniture Campaign 2020',
-                              style: TextStyle(
-                                fontFamily: 'Quicksand',
-                                fontSize: 15.0,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                          Row(children: <Widget>[
-                            SizedBox(
-                                height: SizeConfig.blockSizeVertical * 10,
-                                width: SizeConfig.blockSizeHorizontal * 30,
-                                child: Image.asset(
-                                  'assets/furniture.png',
+                              Padding(
+                                padding: EdgeInsets.only(left: 15.0, top: 15),
+                                child: Text(
+                                  'Campaign Name',
+                                  style: TextStyle(
+                                    fontFamily: 'Quicksand',
+                                    fontSize: 15.0,
+                                    color: Colors.grey,
+                                    // fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
-                              SizedBox(
-                                height: SizeConfig.blockSizeVertical * 10,
-                                width: SizeConfig.blockSizeHorizontal * 30,
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: <Widget>[
-                                    Text(
-                                      'Table Design',
-                                      style: TextStyle(
-                                        fontFamily: 'Poppins',
-                                        fontSize: 20,
-                                        color: const Color(0xff959caf),
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                      textAlign: TextAlign.left,
+                              Padding(
+                                padding: EdgeInsets.only(left: 15.0, top: 10),
+                                child: Text(
+                                  'Furniture Campaign 2020',
+                                  style: TextStyle(
+                                    fontFamily: 'Quicksand',
+                                    fontSize: 15.0,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  SizedBox(
+                                    height: SizeConfig.blockSizeVertical * 10,
+                                    width: SizeConfig.blockSizeHorizontal * 30,
+                                    child: Image.asset(
+                                      'assets/furniture.png',
                                     ),
-                                    Text(
-                                      'Loren Ipsum',
-                                      style: TextStyle(
-                                        fontFamily: 'Poppins',
-                                        fontSize: 15,
-                                        color: const Color(0xff959caf),
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                      textAlign: TextAlign.left,
+                                  ),
+                                  SizedBox(
+                                    height: SizeConfig.blockSizeVertical * 10,
+                                    width: SizeConfig.blockSizeHorizontal * 30,
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        Text(
+                                          'Table Design',
+                                          style: TextStyle(
+                                            fontFamily: 'Poppins',
+                                            fontSize: 15,
+                                            color: const Color(0xff959caf),
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                          textAlign: TextAlign.left,
+                                        ),
+                                        Text(
+                                          'Loren Ipsum',
+                                          style: TextStyle(
+                                            fontFamily: 'Poppins',
+                                            fontSize: 15,
+                                            color: const Color(0xff959caf),
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                          textAlign: TextAlign.left,
+                                        ),
+                                      ],
                                     ),
+                                  ),
                                 ],
-                                ),
                               ),
-                          ],
-                          ),
-                          Row(children: <Widget>[
-                           Padding(
-                            padding: EdgeInsets.only(left: 15.0,top: 10),
-                            child: Text(
-                              'Started Publishers 03',
-                              style: TextStyle(
-                                fontFamily: 'Quicksand',
-                                fontSize: 15.0,
-                                color: Colors.grey,
-                                fontWeight: FontWeight.bold,
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 15.0, top: 10),
+                                    child: Text(
+                                      'Started Publishers 03',
+                                      style: TextStyle(
+                                        fontFamily: 'Quicksand',
+                                        fontSize: 15.0,
+                                        color: Colors.grey,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        
+                                        top: 10),
+                                    child: Text(
+                                      'Ends On 15 Aug 2020',
+                                      style: TextStyle(
+                                        fontFamily: 'Quicksand',
+                                        fontSize: 15.0,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ),
-                          ),
-                           Padding(
-                            padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 35,top: 10),
-                            child: Text(
-                              'Ends On 15 Aug 2020',
-                              style: TextStyle(
-                                fontFamily: 'Quicksand',
-                                fontSize: 15.0,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                              
-                          ],
-                          ),
-
-                          ],
+                            ],
                           ),
                         ),
                       ),
@@ -255,7 +267,7 @@ class CampaignLists extends StatelessWidget {
                           Padding(
                             padding: EdgeInsets.only(left: 15.0),
                             child: Text(
-                              'Trending Campaigns',
+                              'Latest Campaigns',
                               style: TextStyle(
                                 fontFamily: 'Quicksand',
                                 fontSize: 20.0,
@@ -277,7 +289,6 @@ class CampaignLists extends StatelessWidget {
                               ),
                             ),
                           ),
-                          
                         ],
                       ),
                       Padding(
@@ -294,110 +305,113 @@ class CampaignLists extends StatelessWidget {
                               Radius.circular(25.0),
                             ),
                           ),
-
                           child: Column(
-                            crossAxisAlignment:CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                            Padding(
-                            padding: EdgeInsets.only(left: 15.0,top: 15),
-                            child: Text(
-                              'Campaign Name',
-                              style: TextStyle(
-                                fontFamily: 'Quicksand',
-                                fontSize: 15.0,
-                                color: Colors.grey,
-                                // fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 15.0,top: 10),
-                            child: Text(
-                              'Furniture Campaign 2020',
-                              style: TextStyle(
-                                fontFamily: 'Quicksand',
-                                fontSize: 15.0,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                          Row(children: <Widget>[
-                            SizedBox(
-                                height: SizeConfig.blockSizeVertical * 10,
-                                width: SizeConfig.blockSizeHorizontal * 30,
-                                child: Image.asset(
-                                  'assets/furniture.png',
+                              Padding(
+                                padding: EdgeInsets.only(left: 15.0, top: 15),
+                                child: Text(
+                                  'Campaign Name',
+                                  style: TextStyle(
+                                    fontFamily: 'Quicksand',
+                                    fontSize: 15.0,
+                                    color: Colors.grey,
+                                    // fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
-                              SizedBox(
-                                height: SizeConfig.blockSizeVertical * 10,
-                                width: SizeConfig.blockSizeHorizontal * 30,
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: <Widget>[
-                                    Text(
-                                      'Table Design',
-                                      style: TextStyle(
-                                        fontFamily: 'Poppins',
-                                        fontSize: 20,
-                                        color: const Color(0xff959caf),
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                      textAlign: TextAlign.left,
+                              Padding(
+                                padding: EdgeInsets.only(left: 15.0, top: 10),
+                                child: Text(
+                                  'Furniture Campaign 2020',
+                                  style: TextStyle(
+                                    fontFamily: 'Quicksand',
+                                    fontSize: 15.0,
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  SizedBox(
+                                    height: SizeConfig.blockSizeVertical * 10,
+                                    width: SizeConfig.blockSizeHorizontal * 30,
+                                    child: Image.asset(
+                                      'assets/furniture.png',
                                     ),
-                                    Text(
-                                      'Loren Ipsum',
-                                      style: TextStyle(
-                                        fontFamily: 'Poppins',
-                                        fontSize: 15,
-                                        color: const Color(0xff959caf),
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                      textAlign: TextAlign.left,
+                                  ),
+                                  SizedBox(
+                                    height: SizeConfig.blockSizeVertical * 10,
+                                    width: SizeConfig.blockSizeHorizontal * 30,
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        Text(
+                                          'Table Design',
+                                          style: TextStyle(
+                                            fontFamily: 'Poppins',
+                                            fontSize: 15,
+                                            color: const Color(0xff959caf),
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                          textAlign: TextAlign.left,
+                                        ),
+                                        Text(
+                                          'Loren Ipsum',
+                                          style: TextStyle(
+                                            fontFamily: 'Poppins',
+                                            fontSize: 15,
+                                            color: const Color(0xff959caf),
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                          textAlign: TextAlign.left,
+                                        ),
+                                      ],
                                     ),
+                                  ),
                                 ],
-                                ),
                               ),
-                          ],
-                          ),
-                          Row(children: <Widget>[
-                           Padding(
-                            padding: EdgeInsets.only(left: 15.0,top: 10),
-                            child: Text(
-                              'Started Publishers 03',
-                              style: TextStyle(
-                                fontFamily: 'Quicksand',
-                                fontSize: 15.0,
-                                color: Colors.grey,
-                                fontWeight: FontWeight.bold,
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: <Widget>[
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.only(left: 15.0, top: 10),
+                                    child: Text(
+                                      'Started Publishers 03',
+                                      style: TextStyle(
+                                        fontFamily: 'Quicksand',
+                                        fontSize: 15.0,
+                                        color: Colors.grey,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        
+                                        top: 10),
+                                    child: Text(
+                                      'Ends On 15 Aug 2020',
+                                      style: TextStyle(
+                                        fontFamily: 'Quicksand',
+                                        fontSize: 15.0,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ),
-                          ),
-                           Padding(
-                            padding: EdgeInsets.only(left: SizeConfig.blockSizeHorizontal * 35,top: 10),
-                            child: Text(
-                              'Ends On 15 Aug 2020',
-                              style: TextStyle(
-                                fontFamily: 'Quicksand',
-                                fontSize: 15.0,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                              
-                          ],
-                          ),
-
-                          ],
+                            ],
                           ),
                         ),
                       ),
                     ],
                   )
-                  
                 ],
               )
             ],

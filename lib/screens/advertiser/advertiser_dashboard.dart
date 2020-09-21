@@ -2,6 +2,7 @@ import 'package:dhuddu/screens/advertiser/advertiser_home_screen.dart';
 import 'package:dhuddu/screens/advertiser/campaigns_screen.dart';
 import 'package:dhuddu/screens/advertiser/create_campaign.dart';
 import 'package:dhuddu/screens/advertiser/track_campaign.dart';
+import 'package:dhuddu/screens/comman/profile.dart';
 import 'package:dhuddu/util/constants.dart';
 import 'package:dhuddu/util/size_config.dart';
 import 'package:flutter/material.dart';
@@ -19,8 +20,7 @@ class _AdvertiserDashboardState extends State<AdvertiserDashboard> {
     CampaignsScreen(),
     CreateCampaign(),
     TrackCampaignScreen(),
-    Container(color: Colors.green),
-    
+    Profile(),
   ];
   @override
   Widget build(BuildContext context) {

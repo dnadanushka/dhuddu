@@ -61,54 +61,63 @@ class _UserTypeSelectScreenState extends State<UserTypeSelectScreen> {
             ),
 
             // -90 degree, vertical
-            SizedBox(
-              height: SizeConfig.safeBlockVertical * 35,
-              child: Stack(
-                children: [
-                  SizedBox(
-                    height: SizeConfig.safeBlockVertical * 35,
-                    child: Transform.rotate(
-                      angle: -3.14 / 2,
-                      child: Transform.scale(
-                        scale: SizeConfig.safeBlockHorizontal,
-                        child: CupertinoSwitch(
-                          value: isPublisher,
-                          onChanged: (value) {
-                            setState(() {
-                              isPublisher = value;
-                              print(isPublisher);
-                            });
-                          },
-                          //activeTrackColor: Colors.lightGreenAccent,
-                          activeColor: Constants.darkPurple,
-                          trackColor: Constants.darkPurple,
+            Center(
+              child: SizedBox(
+                height: SizeConfig.safeBlockVertical * 35,
+                width: SizeConfig.safeBlockHorizontal*25,
+                child: Stack(
+                  children: [
+                    Center(
+                      child: SizedBox(
+                        height: SizeConfig.safeBlockVertical * 35,
+                        child: Transform.rotate(
+                          angle: -3.14 / 2,
+                          child: Transform.scale(
+                            scale: SizeConfig.safeBlockHorizontal,
+                            child: CupertinoSwitch(
+                              value: isPublisher,
+                              onChanged: (value) {
+                                setState(() {
+                                  isPublisher = value;
+                                  print(isPublisher);
+                                });
+                              },
+                              //activeTrackColor: Colors.lightGreenAccent,
+                              activeColor: Constants.darkPurple,
+                              trackColor: Constants.darkPurple,
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  Column(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Text(
-                        'PUBLISHER',
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                          color: const Color(0xff515f86),
-                          fontWeight: FontWeight.w700,
-                        ),
+                    Center(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            'PUBLISHER',
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                              color: const Color(0xff515f86),
+                              fontWeight: FontWeight.w700,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          Text(
+                            'ADVERTISER',
+                            style: TextStyle(
+                              fontFamily: 'Roboto',
+                              color: const Color(0xff515f86),
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ],
                       ),
-                      Text(
-                        'ADVERTISER',
-                        style: TextStyle(
-                          fontFamily: 'Roboto',
-                          color: const Color(0xff515f86),
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                    ],
-                  )
-                ],
+                    )
+                  ],
+                ),
               ),
             ),
             // Stack(
