@@ -156,7 +156,7 @@ class _OnBoardingPublisherScreenState extends State<OnBoardingPublisherScreen> {
               child: Text('PUBLISHER GUIDE'),
             ),
             SizedBox(
-              height: SizeConfig.safeBlockVertical * 70,
+              height: SizeConfig.safeBlockVertical * 75,
               width: double.infinity,
               child: PageView(
                 controller: _pageController,
@@ -182,7 +182,7 @@ class _OnBoardingPublisherScreenState extends State<OnBoardingPublisherScreen> {
                 alignment: Alignment.bottomCenter,
                 child: _buildCircleIndicator(),
               ),
-            )
+            ),
           ],
         ),
         floatingActionButton: Row(
@@ -231,13 +231,14 @@ class _OnBoardingPublisherScreenState extends State<OnBoardingPublisherScreen> {
               height: SizeConfig.safeBlockVertical * 6,
               child: RaisedButton(
                 onPressed: () {
-
-                  isLast? Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => ActivatedSocialMedia()),
-                  ):_pageController.jumpToPage(_currentPageNotifier.value + 1);
-                  
+                  isLast
+                      ? Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ActivatedSocialMedia()),
+                        )
+                      : _pageController
+                          .jumpToPage(_currentPageNotifier.value + 1);
                 },
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(80.0)),
